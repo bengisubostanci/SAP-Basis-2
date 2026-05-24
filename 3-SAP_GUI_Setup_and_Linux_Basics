@@ -1,0 +1,42 @@
+SAP GUI (Logon) Kurulumu ve İpuçları
+SAP Logon Nedir?
+Windows veya Mac makinelerine kurulabilen, arka planda C++ koduyla yazılmış ve SAP sunucularına bağlanmayı sağlayan temel arayüz yazılımıdır.
+
+Nasıl İndirilir?
+Normal internet sitelerinde .exe dosyasını bulmak kolay değildir; indirme işlemi resmi support.sap.com (SAP Support Portal) üzerinden gerçekleşir.
+
+Versiyon Kontrolü (SM04 / TH_USER_LIST)
+Kullanıcıların sunucuya bağlanırken hangi SAP GUI versiyonunu (örneğin eski 7.40, 7.50 yerine güncel 7.70, 7.80 veya 8.00) kullandığını izlemek Basis danışmanı için kritik önem taşır. Bunun için SM04 işlem kodu (T-Code) veya TH_USER_LIST fonksiyon modülü kullanılır.
+
+
+Sistem Bağlantısı Ekleme
+Yeni bir sistem eklerken Uygulama Sunucusu IP'si, SID (Sistem Kimliği) ve Instance Number (00, 01 gibi) bilgileri girilir.
+
+Bağlantı Bilgilerini Yedekleme
+Bilgisayar değiştirirken veya format atarken SAP GUI'deki kayıtlı sunucu bağlantılarını kaybetmemek için AppData\Roaming\SAP\Common klasöründeki XML tabanlı dosya yedeklenir.
+
+
+Canlı (Prod) ve Test (Dev) Sistemlerini Renklendirme
+Yanlışlıkla canlı sistemde hatalı bir işlem yapmayı (veri silme vb.) önlemek amacıyla, canlı sistem ekranları kırmızı, test sistemleri yeşil gibi farklı renk kodlarıyla özelleştirilir.
+
+Kısayol Kodları
+Ekranlar arasında hızlı geçiş yapmayı sağlayan /n (mevcut ekranı kapatıp yenisini açar) ve /o (mevcut ekranı kapatmadan yeni bir oturum açar) kodları kullanılır.
+
+
+SAP Basis için Temel Linux Komutları
+SAP S/4HANA ve HANA veri tabanı tamamen Linux işletim sistemleri (SUSE/RedHat) üzerinde çalıştığından, sistem seviyesindeki dosya yönetimi ve kontrol işlemleri bu komutlar üzerinden yürütülür.
+
+
+İlk etapta tüm bu parametreleri ezberlemek zor olduğundan, zamanla pratikle oturması beklenmelidir.ls -ltr: Bulunulan dizindeki dosyaları; kimin oluşturduğu, boyutu ve oluşturulma tarihi gibi öz nitelik detaylarıyla listeler.
+pwd: İşletim sisteminde o an tam olarak hangi klasörün/dizinin içinde olunduğunu gösterir.  
+cd: Dizinler arasında geçiş yapmayı (klasör değiştirmeyi) sağlar.  
+mkdir: Yeni bir klasör (directory) oluşturur.
+cp: Dosyaları bir konumdan diğerine kopyalar.
+rm -rf / rm -ri: Dosya veya klasör siler. -rf parametresi onay almadan her şeyi silebildiği için tehlikelidir; silme işlemi öncesi onay isteyen -ri kullanımı hata payını azaltır.
+chmod (Yetkilendirme): Linux'ta okuma, yazma ve çalıştırma yetkilerini düzenler. Sayısal mantığı 2'nin kuvvetlerine dayanır (Okuma=4, Yazma=2, Çalıştırma=1). 777 komutu tüm yetkileri herkese açar.
+chown: Dosya veya klasörün sahibini (owner) ve grubunu değiştirmeyi sağlar (örneğin bir klasörün sahibini root yerine SAP kullanıcısı olan sidADM yapmak için)
+grep: Dosya içeriklerinde veya çalışan sistem süreçlerinde (proseslerde) filtreleme ve kelime araması yapar.
+tar -cvf: Dosyaları haklarını ve özniteliklerini koruyarak bir araya getirip paket haline getirir.  
+scp: İki farklı Linux sunucusu arasında güvenli bir şekilde dosya transferi gerçekleştirir.  
+
+
