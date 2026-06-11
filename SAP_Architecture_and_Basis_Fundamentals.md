@@ -41,9 +41,6 @@ This process manages modifications through Customizing Requests and Workbench Re
 
 -----------------------TR:
 
-Harika bir Markdown (.md) dosyası içeriği oldu. Cümle sonlarındaki tüm geçmişe ve sürece yönelik ifadeleri (anlatılmıştır, bahsedilmiştir, yapılmıştır veya vtt kalıntıları gibi) temizleyerek, tamamen doğrudan, kesin ve profesyonel bir teknik doküman formatına getirdim.
-
-Dosyayı doğrudan bu haliyle kopyalayıp repoya ekleyebilirsin:
 
 SAP Mimarisi ve Basis Temelleri
 SAP Çok Katmanlı Mimari (3-Tier Architecture)
